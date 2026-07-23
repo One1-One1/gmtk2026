@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://b6d8rct4jqvit"]
+
+[ext_resource type="Texture2D" uid="uid://dy53mrybhoat1" path="res://Assets/placeholder/boyo.png" id="1_1cj24"]
+[ext_resource type="Script" uid="uid://b4ydr4epyqld3" path="res://Scripts/boyogun.gd" id="1_cs6id"]
+
+[node name="boyogun" type="Node2D" unique_id=1691891634]
+script = ExtResource("1_cs6id")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1575947973]
+position = Vector2(9.375, 0)
+scale = Vector2(0.054391216, 0.007984032)
+texture = ExtResource("1_1cj24")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=295431619]
+position = Vector2(18, -1.0000004)
+scale = Vector2(0.007984034, 0.019960081)
+texture = ExtResource("1_1cj24")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=85919459]
+position = Vector2(24, -3.5000002)
+scale = Vector2(0.027944103, 0.00998004)
+texture = ExtResource("1_1cj24")
+
+[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=789346277]
+position = Vector2(28, -5)
+scale = Vector2(0.013972088, 0.0029940112)
+texture = ExtResource("1_1cj24")

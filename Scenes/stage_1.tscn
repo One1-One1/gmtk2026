@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cleluwyxm7eo2"]
+
+[ext_resource type="PackedScene" uid="uid://h4nk5ake5iug" path="res://Scenes/Characters/boyo.tscn" id="1_axx50"]
+
+[node name="stage1" type="Node2D" unique_id=37443596]
+
+[node name="Area2D" parent="." unique_id=223765380 instance=ExtResource("1_axx50")]
+position = Vector2(205, 395)

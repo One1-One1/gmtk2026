@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://h4nk5ake5iug"]
+
+[ext_resource type="Script" uid="uid://b24035urri6hy" path="res://Scripts/boyo.gd" id="1_35r3v"]
+[ext_resource type="Texture2D" uid="uid://dy53mrybhoat1" path="res://Assets/placeholder/boyo.png" id="1_ele10"]
+[ext_resource type="PackedScene" uid="uid://b6d8rct4jqvit" path="res://Scenes/Characters/boyogun.tscn" id="2_otxte"]
+[ext_resource type="Texture2D" uid="uid://cn0rybew6wqh3" path="res://Assets/placeholder/opp.png" id="3_f1ltf"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3gepn"]
+radius = 7.3999996
+height = 14.799999
+
+[node name="Area2D" type="Area2D" unique_id=223765380]
+scale = Vector2(5, 5)
+script = ExtResource("1_35r3v")
+
+[node name="boyogun" parent="." unique_id=1691891634 instance=ExtResource("2_otxte")]
+position = Vector2(1.5999999, -1.5999998)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=185173571]
+scale = Vector2(0.035928145, 0.0718563)
+texture = ExtResource("1_ele10")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1279046225]
+position = Vector2(6.8, -12.199999)
+scale = Vector2(0.008200002, 0.0022)
+texture = ExtResource("3_f1ltf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1282651826]
+position = Vector2(0, -10)
+shape = SubResource("CapsuleShape2D_3gepn")
