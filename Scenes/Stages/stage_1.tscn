@@ -1,0 +1,143 @@
+[gd_scene format=3 uid="uid://cleluwyxm7eo2"]
+
+[ext_resource type="Texture2D" uid="uid://dy53mrybhoat1" path="res://Assets/placeholder/boyo.png" id="1_8h0o7"]
+[ext_resource type="PackedScene" uid="uid://h4nk5ake5iug" path="res://Scenes/Characters/boyo.tscn" id="1_axx50"]
+[ext_resource type="PackedScene" uid="uid://dtqpexuqh73uo" path="res://Scenes/UI/mainMenu.tscn" id="1_eeojf"]
+[ext_resource type="PackedScene" uid="uid://clii3mf5dth2x" path="res://Scenes/Characters/dummy.tscn" id="2_elaf8"]
+[ext_resource type="AudioStream" uid="uid://ccjb54vxumgy1" path="res://Audio/Music/Main Theme (NO) Child Play.wav" id="5_hf3jt"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_elaf8"]
+b = Vector2(2000, 0)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_36o1k"]
+b = Vector2(0, 1000)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_mdoth"]
+a = Vector2(1000, 0)
+b = Vector2(1000, 1000)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_8h0o7"]
+a = Vector2(0, 1000)
+b = Vector2(2000, 1000)
+
+[sub_resource type="Animation" id="Animation_eeojf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("parallaxCam:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("parallaxCam:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_hf3jt"]
+resource_name = "camPan"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("parallaxCam:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 844)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("parallaxCam:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MainMenu")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"startGame"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e760n"]
+_data = {
+&"RESET": SubResource("Animation_eeojf"),
+&"camPan": SubResource("Animation_hf3jt")
+}
+
+[node name="stage1" type="Node2D" unique_id=37443596]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1029702514]
+position = Vector2(-4, 425)
+scale = Vector2(3.262475, 3.6546907)
+texture = ExtResource("1_8h0o7")
+
+[node name="MainMenu" parent="." unique_id=1146840130 instance=ExtResource("1_eeojf")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="boyo" parent="." unique_id=223765380 instance=ExtResource("1_axx50")]
+position = Vector2(-434.49994, 885)
+
+[node name="Dummy" parent="." unique_id=1247626879 instance=ExtResource("2_elaf8")]
+position = Vector2(437.50006, 897)
+
+[node name="laserborder" type="Area2D" parent="." unique_id=694696266]
+position = Vector2(-639.5, 490)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="laserborder" unique_id=1031736335]
+shape = SubResource("SegmentShape2D_elaf8")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="laserborder" unique_id=1250353949]
+shape = SubResource("SegmentShape2D_36o1k")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="laserborder" unique_id=1819271011]
+position = Vector2(719, -12)
+shape = SubResource("SegmentShape2D_mdoth")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="laserborder" unique_id=1424674251]
+shape = SubResource("SegmentShape2D_8h0o7")
+
+[node name="parallaxCam" type="Camera2D" parent="." unique_id=41835523]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=791554456]
+libraries/ = SubResource("AnimationLibrary_e760n")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2022709637]
+stream = ExtResource("5_hf3jt")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="MainMenu" method="_on_animation_player_animation_finished"]

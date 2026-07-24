@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cskh3old1ejlt"]
+
+[ext_resource type="Script" uid="uid://fsh7qcpeuae7" path="res://Scripts/box_hurt.gd" id="1_k8paw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f5u5i"]
+
+[node name="BoxHurt" type="Area2D" unique_id=1712491336]
+script = ExtResource("1_k8paw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1791118671]
+shape = SubResource("RectangleShape2D_f5u5i")
+debug_color = Color(0.8787396, 0.310417, 0.37451026, 0.41960785)

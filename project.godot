@@ -10,15 +10,25 @@ config_version=5
 
 [application]
 
-config/name="New Game Project"
+config/name="gmtk2026"
 run/main_scene="uid://cleluwyxm7eo2"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*uid://mvmx58k1l6rx"
+
 [display]
 
+window/size/viewport_width=1280
+window/size/viewport_height=720
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[gui]
+
+theme/custom_font="uid://dg83jfmhpp0bq"
 
 [physics]
 

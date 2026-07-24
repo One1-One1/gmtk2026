@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://dm5iqqld0cigx"]
+
+[node name="Aimbeam" type="RayCast2D" unique_id=936827357]
+target_position = Vector2(140, 0)
+collide_with_areas = true

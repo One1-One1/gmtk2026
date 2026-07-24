@@ -1,27 +1,23 @@
 [gd_scene format=3 uid="uid://b6d8rct4jqvit"]
 
-[ext_resource type="Texture2D" uid="uid://dy53mrybhoat1" path="res://Assets/placeholder/boyo.png" id="1_1cj24"]
 [ext_resource type="Script" uid="uid://b4ydr4epyqld3" path="res://Scripts/boyogun.gd" id="1_cs6id"]
+[ext_resource type="Texture2D" uid="uid://bynp42v1mu1v1" path="res://Assets/Character/MC_CowboyArm.png" id="2_cs6id"]
+[ext_resource type="PackedScene" uid="uid://dm5iqqld0cigx" path="res://Scenes/Misc/aimbeam.tscn" id="3_g0vi2"]
 
 [node name="boyogun" type="Node2D" unique_id=1691891634]
 script = ExtResource("1_cs6id")
+laserLength = null
+lasercolor = Color(0.9098039, 0.07450981, 0.14901961, 0.64705884)
+stageStart = null
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1575947973]
-position = Vector2(9.375, 0)
-scale = Vector2(0.054391216, 0.007984032)
-texture = ExtResource("1_1cj24")
+position = Vector2(8.000008, 5.000004)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_cs6id")
 
-[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=295431619]
-position = Vector2(18, -1.0000004)
-scale = Vector2(0.007984034, 0.019960081)
-texture = ExtResource("1_1cj24")
+[node name="Aimbeam" parent="." unique_id=936827357 instance=ExtResource("3_g0vi2")]
+position = Vector2(48, -8)
+target_position = Vector2(300, 0)
 
-[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=85919459]
-position = Vector2(24, -3.5000002)
-scale = Vector2(0.027944103, 0.00998004)
-texture = ExtResource("1_1cj24")
-
-[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=789346277]
-position = Vector2(28, -5)
-scale = Vector2(0.013972088, 0.0029940112)
-texture = ExtResource("1_1cj24")
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1130375723]
+position = Vector2(48, -8)

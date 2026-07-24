@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://clii3mf5dth2x"]
+
+[ext_resource type="Texture2D" uid="uid://dur38hidru0v1" path="res://Assets/Character/Kid2_Normal.png" id="1_2qvp0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f5u5i"]
+size = Vector2(6, 82.8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3gepn"]
+
+[node name="Dummy" type="Area2D" unique_id=1247626879]
+scale = Vector2(5, 5)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=94441590]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_2qvp0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1653438173]
+position = Vector2(5.7999983, 2.9999995)
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_f5u5i")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=619650102]
+position = Vector2(4.9999995, 35.199997)
+shape = SubResource("RectangleShape2D_3gepn")
